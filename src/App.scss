@@ -1,0 +1,38 @@
+@import "./components/_variables";
+@import './components/_media-query.scss';
+@import './components/_normalize.scss';
+@import './components/_typography.scss';
+
+
+.app--container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  padding-bottom: 30px;
+  min-height: 600px;
+}
+
+.text--container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+body {
+  background-color: lightgray;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 1rem;
+  // padding: 0 1.5rem;
+}
+
+a {
+  color: #000;
+}
+
+li {
+  line-height: 1.7;
+}
+

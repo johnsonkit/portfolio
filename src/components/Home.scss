@@ -1,0 +1,26 @@
+@import "./_variables.scss";
+@import './_media-query.scss';
+
+.home {
+  .hero {
+    height: 400px;
+    background: url('../images/hero_mb.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mq-tp-up {
+      height: 600px;
+      // background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/hero_dt.jpg') no-repeat;
+      background: url('../images/hero_dt.jpg') no-repeat;
+    }
+    h2 {
+      margin: 0;
+      color: #fff;
+      text-align: center;
+      line-height: 1.5;
+    }
+  
+  }
+}
