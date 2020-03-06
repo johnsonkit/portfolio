@@ -16,29 +16,25 @@ import Work from './components/Work';
 
 function App() {
   return (
-    <Router>
+    <HashRouter basename='/'>
       <div className="app">
         <div className="app--container">
-          
           <Header />
 
           <div className="main">
-            <HashRouter basename='/'>
               <Route path="/" exact component={Home}/>
-              <Route path="/about" exact component={About}/> 
-              <Route path="/work" exact component={Work}/>
-              <Route path="/contact" exact component={Contact}/>
-            </HashRouter>
+              <Route path="/about" component={About}/> 
+              <Route path="/work" component={Work}/>
+              <Route path="/contact" component={Contact}/>
           </div>
-
+          
           <div className="footer">
 
           </div>
 
         </div>
       </div>
-
-    </Router>
+    </HashRouter>
   );
 }
 
