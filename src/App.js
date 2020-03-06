@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
+  HashRouter,
   Switch
 } from 'react-router-dom';
 import './App.scss';
@@ -22,13 +23,12 @@ function App() {
           <Header />
 
           <div className="main">
-            <Switch>
+            <HashRouter basename='/'>
               <Route path="/" exact component={Home}/>
-              {/* <Route path="/home" component={Home}/> */}
               <Route path="/about" exact component={About}/> 
               <Route path="/work" exact component={Work}/>
               <Route path="/contact" exact component={Contact}/>
-            </Switch>
+            </HashRouter>
           </div>
 
           <div className="footer">
