@@ -38,7 +38,6 @@ class ContactForm extends React.Component {
 
     try {
       const response = await axios.post(URL_of_end_point, this.objectToQueryString(formData), config);
-      console.log(response);
       if (response.data.success) {
         this.setState({
           isSubmitted: true
