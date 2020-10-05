@@ -1,6 +1,7 @@
 import React from 'react';
 import './ContactForm.scss';
 import axios from 'axios';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -46,7 +47,6 @@ class ContactForm extends React.Component {
     } catch (error) {
       console.error(error);
     }
-
   }
 
   render() {
@@ -69,7 +69,9 @@ class ContactForm extends React.Component {
               <span className="label-title">Message:</span> 
               <textarea name="message" id="message" rows="10" cols="50" />
             </label>
-            <div className="g-recaptcha" data-sitekey="6Le8vtMZAAAAADwW_LLXthPT50vVZfA-GaBYG-XL"></div>
+            <ReCAPTCHA
+              sitekey='6Le8vtMZAAAAADwW_LLXthPT50vVZfA-GaBYG-XL'
+            />
             <br/>
             <button id="submit-btn" className="submit" type="submit">Send</button>
           </form>
