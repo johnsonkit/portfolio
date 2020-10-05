@@ -1,5 +1,6 @@
 import React from 'react';
 import './ContactForm.scss';
+import axios from 'axios';
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -10,13 +11,43 @@ class ContactForm extends React.Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
-  handleFormSubmit(e) {
-    e.preventDefault();
-    e.target.submit();
+  objectToQueryString(obj) {
+    return Object.keys(obj).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`).join('&');
+  }
 
-    this.setState({
-      isSubmitted: true
-    })
+  async handleFormSubmit(e) {
+    e.preventDefault();
+    const _ = e.target;
+    let formData = {};
+
+    // set the formData
+    for (let i = 0; i < _.length; i++) {
+      const el = _.elements[i];
+      if (el.getAttribute('name') != null) {
+        formData[el.getAttribute("name")] = el.value;
+      }
+    }
+
+    // POST request URL
+    const URL_of_end_point = 'https://script.google.com/macros/s/AKfycbyiX2vxyioc-TzTntLbuwsP-STsyNuIignP_jKnIo9Zb9gzQUkf/exec?action=CREATE_DATA';
+
+    // POST request config
+    const config = {
+      headers: { "Content-Type": "application/x-www-form-urlencoded" }
+    }
+
+    try {
+      const response = await axios.post(URL_of_end_point, this.objectToQueryString(formData), config);
+      console.log(response);
+      if (response.data.success) {
+        this.setState({
+          isSubmitted: true
+        })
+      }
+    } catch (error) {
+      console.error(error);
+    }
+
   }
 
   render() {
@@ -25,8 +56,8 @@ class ContactForm extends React.Component {
     return (
       <div className={`contact-form ${mainClassName}`}>
         <div className="form--wrapper">
-          <iframe name="hidden_iframe" id="hidden_iframe" style={{display: 'none'}} title='formIframe'></iframe>
-          <form action="https://script.google.com/macros/s/AKfycbyiX2vxyioc-TzTntLbuwsP-STsyNuIignP_jKnIo9Zb9gzQUkf/exec" method="POST" target="hidden_iframe" onSubmit={this.handleFormSubmit}>
+          <form onSubmit={this.handleFormSubmit}>
+            <div id="html_element"></div>
             <label htmlFor="name">
               <span className="label-title">Name:</span> 
               <input type="text" name="name" id="name" />
@@ -39,7 +70,8 @@ class ContactForm extends React.Component {
               <span className="label-title">Message:</span> 
               <textarea name="message" id="message" rows="10" cols="50" />
             </label>
-            <input type="hidden" name="method" value="CREATE_DATA" />
+            <div className="g-recaptcha" data-sitekey="6Le8vtMZAAAAADwW_LLXthPT50vVZfA-GaBYG-XL"></div>
+            <br/>
             <button id="submit-btn" className="submit" type="submit">Send</button>
           </form>
         </div>
