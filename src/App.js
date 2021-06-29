@@ -23,7 +23,7 @@ function App() {
 
           <div className="main">
               <Route path="/" exact component={Home}/>
-              <Route path="/about" component={About}/> 
+              {/* <Route path="/about" component={About}/>  */}
               <Route path="/work" component={Work}/>
               <Route path="/contact" component={Contact}/>
           </div>

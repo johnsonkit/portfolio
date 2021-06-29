@@ -12,7 +12,7 @@ class Home extends React.Component {
       <div className="home">
         {/* <h2>Home</h2> */}
         <div className="hero">
-          <h2>Johnson Kit<br />Web Developer<br />From Hong Kong<br />Now in London</h2>
+          <h2>Johnson Kit<br />Web Developer<br />From Hong Kong</h2>
         </div>
         <About />
       </div>

@@ -66,14 +66,14 @@ class Header extends React.Component {
                     Home
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink 
                   to="/about" 
                   activeClassName="active"
                   >
                     About
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink 
                   to="/work" 

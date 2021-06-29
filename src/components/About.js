@@ -13,10 +13,7 @@ class About extends React.Component {
         <div className="text--container">
           <h2>About</h2>
           <p>
-            Hi! My name is Johnson Kit. I am a web developer from Hong Kong and now in London. My previous working experiences were mainly on the front-end and had some experiences in PHP and Ruby on Rails. My web development stack is HTML, CSS, and JavaScript.
-          </p>
-          <p>
-            I like reading books, taking online courses, and joining the meetup group to learn about the latest web development skills.
+            Hi! My name is Johnson Kit. I am a web developer from Hong Kong. Work closely with designers and build nice user experience web pages.
           </p>
           <p>
             My skills are as below:
@@ -24,11 +21,11 @@ class About extends React.Component {
           <p>
             <u>Programming Languages:</u><br/>
             HTML/HTML5/Nunjucks, CSS/CSS3/SASS/SCSS/LESS/BEM,
-            JavaScript/TypeScript, PHP, Ruby
+            JavaScript/TypeScript, PHP, Ruby, SQL
           </p>
           <p>
             <u>Libraries / Frameworks:</u><br/>
-            jQuery, React, Node.js, Bootstrap, Ruby on Rails
+            jQuery, React, Node.js, Bootstrap, Laravel 8, Ruby on Rails
           </p>
           <p>
             <u>Tools:</u><br/>
@@ -36,7 +33,7 @@ class About extends React.Component {
           </p>
           <p>
             <u>Testing:</u><br/>
-            Jasmine, Cross-Browser and Cross-Device Testing
+            Cypress, Cross-Browser and Cross-Device Testing
           </p>
           <p>
             <u>CMS:</u><br/>
@@ -50,9 +47,6 @@ class About extends React.Component {
           <p>
             <u>Languages:</u><br/>
             Intermediate English, native Cantonese speaker, and fluent Mandarin
-          </p>
-          <p>
-            Apart from work, I like Chinese tea culture, calligraphy, meditation, and yoga.
           </p>
         </div>
         
